@@ -62,7 +62,9 @@ function App() {
 
   const charNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  const charSpecial = ["!", "@", "$", "*", "-", "_"];
+  // "-", "_" Char removed
+
+  const charSpecial = ["!", "@", "$", "*"];
 
   const [passwords, setPasswords] = useState([]);
 
