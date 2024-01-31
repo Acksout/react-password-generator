@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "../node_modules/tachyons/css/tachyons.css";
 
 function App() {
   const smallAlphabet = [
@@ -118,14 +119,26 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Password Generator</h1>
-      {passwords.map((password, index) => (
-        <p key={index}>
-          Pass{index + 1}: {password}
-        </p>
-      ))}
-      <button onClick={handleGenerateClick}>Generate</button>
+    <div
+      className="vh-100 flex items-center justify-center bg-dark-gray"
+      style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
+    >
+      <div className="mw6 pa4 bg-gray shadow-5 flex flex-column items-center">
+        <h1 className="mb4 tc white">Password Generator</h1>
+        <div className="flex flex-wrap">
+          {passwords.map((password, index) => (
+            <p key={index} className="w-100 pa3 br2 bg-mid-gray white mv2">
+              Pass{index + 1}: {password}
+            </p>
+          ))}
+        </div>
+        <button
+          className="pa3 bg-blue white bn br2 pointer mt3"
+          onClick={handleGenerateClick}
+        >
+          Generate
+        </button>
+      </div>
     </div>
   );
 }
